@@ -203,3 +203,52 @@ The main IoT process is:
 This conceptual system can later be expanded with additional sensors, automatic controls, notifications and data analytics.
 # SWYNEX-IoT-System-Map
 IoT System Map for a Smart Room Temperature Monitoring System, documenting sensors, connectivity, cloud data flow, dashboard, and remote monitoring.
+code.. 
+import random
+import time
+
+# IoT System Map
+# Use Case: Room Temperature Monitoring
+
+def read_temperature():
+    """Simulate a temperature sensor."""
+    return round(random.uniform(20, 35), 2)
+
+
+def send_to_cloud(temperature):
+    """Simulate sending sensor data to the cloud."""
+    print(f"Sending data to cloud: {temperature} °C")
+
+
+def display_dashboard(temperature):
+    """Simulate a cloud dashboard."""
+    print("-----------------------------")
+    print("      IoT DASHBOARD")
+    print("-----------------------------")
+    print(f"Room Temperature: {temperature} °C")
+
+    if temperature > 30:
+        print("Status: HIGH TEMPERATURE")
+    else:
+        print("Status: NORMAL")
+
+    print("-----------------------------")
+
+
+# Main IoT data flow
+for i in range(5):
+
+    # 1. Sensor
+    temperature = read_temperature()
+    print(f"\nSensor Reading: {temperature} °C")
+
+    # 2. Connectivity
+    print("Connectivity: Wi-Fi")
+
+    # 3. Cloud
+    send_to_cloud(temperature)
+
+    # 4. Dashboard
+    display_dashboard(temperature)
+
+    time.sleep(2)
